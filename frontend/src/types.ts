@@ -71,4 +71,5 @@ export interface SimulationState {
   events: Event[];
   metrics: Metrics;
   selected_satellite_id?: string | null;
+  swarm_count?: number;
 }

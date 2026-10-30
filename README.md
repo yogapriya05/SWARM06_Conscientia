@@ -36,5 +36,9 @@ Open the Vite URL (normally `http://localhost:5173`). Set `VITE_API_URL` if the 
 3. Use **Fail node** on the selected satellite.
 4. Observe owner reassignment, route changes and recovery metrics in the event stream.
 5. Advance the simulation with **Tick** or enable the live loop.
+6. Set **Number of swarms** and **Satellites per swarm**, apply the constellation,
+   then choose a target swarm and failure mode. The selected swarm is isolated
+   for the configured duration and automatically reconnects; **Re-establish
+   connection** can recover it immediately.
 
 See [`docs/workflow.md`](docs/workflow.md) for the model assumptions, API examples and demonstration script.

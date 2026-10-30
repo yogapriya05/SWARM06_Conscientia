@@ -18,11 +18,11 @@ class SwarmState:
         satellites = []
         for index, sat in enumerate(self.satellites):
             satellites.append({
-                "id": f"SAT-{index + 1:02d}",
-                "name": f"SAT-{index + 1:02d}",
-                "swarm": "Alpha" if index < 3 else "Beta",
-                "x": (sat.position[0] % 10000) / 10000,
-                "y": (sat.position[1] % 10000) / 10000,
+                "id": sat.id,
+                "name": sat.id,
+                "swarm": sat.swarm_id,
+                "x": min(0.94, max(0.06, (sat.position[0] % 6000) / 6000)),
+                "y": min(0.88, max(0.08, (sat.position[1] % 4000) / 4000)),
                 "status": "online" if sat.status == SatelliteStatus.ACTIVE else sat.status.value,
                 "battery": sat.battery_wh / max(1, sat.battery_capacity_wh) * 100,
                 "temperature": sat.temperature_c,

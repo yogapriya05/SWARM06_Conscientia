@@ -21,8 +21,16 @@ class TaskRequest(BaseModel):
 
 
 class FailureRequest(BaseModel):
-    satellite_id: str
+    satellite_id: Optional[str] = None
+    swarm_id: Optional[str] = None
+    failure_mode: str = "complete_outage"
+    duration_ticks: int = Field(default=5, ge=1)
     reason: str = "manual failure"
+
+
+class SwarmConfigRequest(BaseModel):
+    swarm_count: int = Field(default=2, ge=1, le=8)
+    satellites_per_swarm: int = Field(default=3, ge=1, le=12)
 
 
 class StepRequest(BaseModel):

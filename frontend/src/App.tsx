@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { advance, connectLive, createTask, failSatellite, getState, reset } from "./api";
+import { advance, configureSwarms, connectLive, createTask, failSatellite, failSwarm, getState, recoverSwarm, reset } from "./api";
 import type { SimulationState } from "./types";
 import MeshView from "./components/MeshView";
 import SatellitePanel from "./components/SatellitePanel";
@@ -13,7 +13,11 @@ export default function App() {
   const [state, setState] = useState<SimulationState | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [failedTarget, setFailedTarget] = useState("SAT-02");
+  const [targetSwarm, setTargetSwarm] = useState("SWARM-01");
   const [failureType, setFailureType] = useState("Complete CubeSat outage");
+  const [failureDuration, setFailureDuration] = useState(5);
+  const [swarmCount, setSwarmCount] = useState(2);
+  const [satellitesPerSwarm, setSatellitesPerSwarm] = useState(3);
   const [severity, setSeverity] = useState("critical");
   const [running, setRunning] = useState(false);
   const [stage, setStage] = useState(-1);
@@ -42,18 +46,20 @@ export default function App() {
   };
   const inject = async () => {
     setStage(0);
-    await run(() => failSatellite(failedTarget));
+    await run(() => failSwarm(targetSwarm, failureType === "Complete CubeSat outage" ? "complete_outage" : failureType.toLowerCase().replace(/ /g, "_"), failureDuration));
     [1, 2, 3, 4, 5, 6].forEach((value, index) => window.setTimeout(() => setStage(value), 500 + index * 600));
+    window.setTimeout(() => setStage(-1), Math.max(3000, failureDuration * 1200));
   };
   const resetDemo = () => { setRunning(false); setStage(-1); run(reset); };
   const availableNodes = state.satellites.filter((s) => s.status === "online").length;
+  const swarmIds = Array.from(new Set(state.satellites.map((sat) => sat.swarm)));
   const route = stage >= 4 ? ["SAT-01", "SAT-03", "SAT-05"] : ["SAT-01", "SAT-02", "SAT-03"];
 
   return (
     <main>
       <header className="topbar">
         <div><span className="eyebrow">MISSION CONTROL / DISTRIBUTED RECOVERY</span><h1>Edge Swarm <em>·</em> Live Operations</h1></div>
-        <div className="top-status"><span className={running ? "live-dot" : "paused"}>{running ? "RUNNING" : "PAUSED"} · T+{state.tick}</span><span className="status-chip green">{availableNodes}/6 NODES</span><span className="status-chip green">NETWORK NOMINAL</span></div>
+        <div className="top-status"><span className={running ? "live-dot" : "paused"}>{running ? "RUNNING" : "PAUSED"} · T+{state.tick}</span><span className="status-chip green">{swarmIds.length} SWARMS</span><span className="status-chip green">{availableNodes}/{state.satellites.length} NODES</span><span className="status-chip green">NETWORK NOMINAL</span></div>
       </header>
       <div className="toolbar">
         <button onClick={() => setRunning(!running)}>{running ? "Pause" : "Run"}</button><button className="secondary" onClick={() => run(() => advance())}>Single step</button><button className="secondary" onClick={resetDemo}>Reset</button><button className="secondary" onClick={() => window.print()}>Export results</button>
@@ -65,10 +71,13 @@ export default function App() {
         <aside className="left-rail">
           <div className="panel"><div className="panel-heading"><span>Failure injection</span><span className="pulse red" /></div>
             <label>Preset scenario<select value={failureType} onChange={(e) => setFailureType(e.target.value)}><option>Complete CubeSat outage</option><option>Radio failure</option><option>Single-link failure</option><option>Battery depletion</option><option>Network partition</option></select></label>
-            <label>Target node<select value={failedTarget} onChange={(e) => setFailedTarget(e.target.value)}>{state.satellites.map((s) => <option key={s.id}>{s.id}</option>)}</select></label>
+            <label>Target swarm<select value={targetSwarm} onChange={(e) => setTargetSwarm(e.target.value)}>{swarmIds.map((id) => <option key={id}>{id}</option>)}</select></label>
+            <label>Failure duration<select value={failureDuration} onChange={(e) => setFailureDuration(Number(e.target.value))}><option value={3}>3 ticks · quick reconnect</option><option value={5}>5 ticks · standard</option><option value={10}>10 ticks · extended</option></select></label>
             <label>Severity<select value={severity} onChange={(e) => setSeverity(e.target.value)}><option value="critical">Critical</option><option value="warning">Constrained</option><option value="info">Transient</option></select></label>
-            <button className="inject" onClick={inject} disabled={state.satellites.find((s) => s.id === failedTarget)?.status !== "online"}>Inject failure <span>→</span></button>
+            <button className="inject" onClick={inject} disabled={!state.satellites.some((sat) => sat.swarm === targetSwarm && sat.status === "online")}>Inject failure <span>→</span></button>
+            <button className="secondary reconnect" onClick={() => run(() => recoverSwarm(targetSwarm))}>Re-establish connection <span>↻</span></button>
           </div>
+          <div className="panel"><div className="panel-heading"><span>Swarm configuration</span><span className="muted">{swarmIds.length} active</span></div><label>Number of swarms<input type="number" min="1" max="8" value={swarmCount} onChange={(e) => setSwarmCount(Number(e.target.value))} /></label><label>Satellites per swarm<input type="number" min="1" max="12" value={satellitesPerSwarm} onChange={(e) => setSatellitesPerSwarm(Number(e.target.value))} /></label><button className="secondary" onClick={() => run(() => configureSwarms(swarmCount, satellitesPerSwarm))}>Apply constellation</button></div>
           <div className="panel recovery-panel"><div className="panel-heading"><span>Recovery tracker</span><span className="muted">{stage < 0 ? "standby" : `${stage + 1}/7`}</span></div>{stages.map((item, index) => <div className={`tracker ${index < stage ? "done" : ""} ${index === stage ? "current" : ""}`} key={item}><i>{index < stage ? "✓" : index + 1}</i><span>{item}</span>{index === stage && <small>in progress</small>}</div>)}</div>
         </aside>
         <section className="main-column">

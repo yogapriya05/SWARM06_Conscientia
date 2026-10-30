@@ -5,7 +5,7 @@ from fastapi import Body, FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 
 from .engine import SimulationEngine
-from .schemas import FailureRequest, StepRequest, TaskRequest
+from .schemas import FailureRequest, StepRequest, SwarmConfigRequest, TaskRequest
 from .models import Task
 
 
@@ -58,7 +58,27 @@ def create_app(engine: SimulationEngine | None = None) -> FastAPI:
     @app.post("/failures")
     @app.post("/api/failures")
     def failure(request: FailureRequest):
-        sim.fail(request.satellite_id, request.reason)
+        if request.swarm_id:
+            return sim.fail_swarm(request.swarm_id, request.failure_mode, request.duration_ticks, request.reason)
+        if not request.satellite_id:
+            raise ValueError("satellite_id or swarm_id is required")
+        sim.fail(request.satellite_id, f"{request.failure_mode}: {request.reason}")
+        return sim.state.snapshot(sim.graph)
+
+    @app.post("/api/recover/{swarm_id}")
+    def recover(swarm_id: str):
+        return sim.recover_swarm(swarm_id)
+
+    @app.post("/api/config/swarms")
+    def configure_swarms(request: SwarmConfigRequest):
+        nonlocal sim
+        sim = SimulationEngine({"simulation": {
+            "swarm_count": request.swarm_count,
+            "satellites_per_swarm": request.satellites_per_swarm,
+            "timestep_seconds": 60,
+            "orbit_period_seconds": 5400,
+        }})
+        app.state.engine = sim
         return sim.state.snapshot(sim.graph)
 
     @app.post("/step")

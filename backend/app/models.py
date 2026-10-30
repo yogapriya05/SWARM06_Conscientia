@@ -34,6 +34,9 @@ class Satellite:
     status: SatelliteStatus = SatelliteStatus.ACTIVE
     eclipse: bool = False
     neighbors: List[str] = field(default_factory=list)
+    swarm_id: str = "SWARM-01"
+    orbital_phase: float = 0.0
+    orbital_speed: float = 0.035
 
     @property
     def available_cpu(self) -> float:

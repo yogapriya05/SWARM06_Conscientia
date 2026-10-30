@@ -1,4 +1,6 @@
 simulation:
+  swarm_count: 2
+  satellites_per_swarm: 3
   satellite_count: 6
   timestep_seconds: 60
   seed: 7

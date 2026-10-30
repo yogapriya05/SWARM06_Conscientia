@@ -56,3 +56,13 @@ The websocket endpoint `/api/live` emits a complete state snapshot after every
 tick, task admission and failure recovery. The frontend consumes those
 snapshots directly, so the dashboard remains usable if the simulation loop is
 running without a browser refresh.
+
+## Configurable swarms
+
+The dashboard can rebuild the constellation with 1–8 swarms and 1–12
+satellites per swarm. Each satellite receives an orbital phase and advances
+along a deterministic circular trajectory on every simulation step. Failure
+injection can target an entire swarm, select a failure mode, and choose a
+duration. At the end of that duration the swarm is automatically marked
+online and pending work is allocated again; the manual reconnect action
+performs the same recovery immediately.
