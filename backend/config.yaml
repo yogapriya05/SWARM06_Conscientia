@@ -1,0 +1,17 @@
+simulation:
+  swarm_count: 2
+  satellites_per_swarm: 3
+  satellite_count: 6
+  timestep_seconds: 60
+  seed: 7
+  orbit_period_seconds: 5400
+resources:
+  battery_capacity_wh: 1000
+  initial_battery_wh: 650
+  solar_generation_w: 220
+  thermal_limit_c: 85
+  cpu_capacity: 100
+  storage_capacity_gb: 64
+network:
+  max_range_km: 2500
+  bandwidth_mbps: 100
