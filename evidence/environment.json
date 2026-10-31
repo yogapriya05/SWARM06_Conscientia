@@ -1,0 +1,12 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "fastapi": "0.162.0",
+    "uvicorn": "0.54.0",
+    "numpy": "2.3.5",
+    "pydantic": "2.14.1",
+    "websockets": "16.0",
+    "pytest": "9.2.0",
+    "httpx": "0.28.1"
+  }
+}

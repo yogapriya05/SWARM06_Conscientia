@@ -1,0 +1,15 @@
+
+> edge-swarm-simulator-frontend@0.1.0 build
+> tsc -b && vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 36 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.56 kB │ gzip:   0.33 kB
+dist/assets/index-u4kajSu3.css   16.45 kB │ gzip:   4.60 kB
+dist/assets/index-_MpDdjWZ.js    55.42 kB │ gzip:  16.86 kB
+dist/assets/react-SIwY82C9.js   140.74 kB │ gzip:  45.21 kB
+dist/assets/three-UOR6CXtU.js   494.43 kB │ gzip: 124.71 kB
+✓ built in 1.73s

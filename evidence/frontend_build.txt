@@ -1,0 +1,5 @@
+
+> edge-swarm-simulator-frontend@0.1.0 build
+> tsc -b && vite build
+
+src/components/MeshView.tsx(94,38): error TS2339: Property 'time_s' does not exist on type 'Satellite'.

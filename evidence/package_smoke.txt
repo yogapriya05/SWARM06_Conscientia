@@ -1,0 +1,1 @@
+PASS extracted ZIP without node_modules: all four bundled frontend assets served; conditional asset requests correctly returned 304; routed manifests preceded ownership; conflict guard rejected competing claim; reconstruction immediately reassigned shared work without clock advance; initial graph remained available.

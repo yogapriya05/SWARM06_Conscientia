@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "checks": {
+    "websocket_live": true,
+    "prominent_coordination_ui": true,
+    "j2_common_orbit_and_initial_graph": true,
+    "requests_are_buffered_before_coordination": true,
+    "manifest_precedes_allocation": true,
+    "visible_conflict_rejection": true,
+    "immediate_reallocation": true,
+    "initial_and_reconstructed_3d_graphs": true,
+    "continuous_interpolated_animation": true,
+    "rare_failures_separate_from_link_effects": true,
+    "accelerated_workload_and_delivery": true,
+    "antenna_weight_breakdown": true,
+    "individual_battery_control": true,
+    "forty_satellites_supported": true,
+    "mobile_no_overflow": true,
+    "no_javascript_errors": true
+  },
+  "errors": [],
+  "render_times": [
+    6.77244,
+    6.87528,
+    6.9631,
+    7.0425,
+    7.14693,
+    7.27243,
+    7.41378,
+    7.5356,
+    7.66871,
+    7.80736,
+    7.92791,
+    8
+  ]
+}

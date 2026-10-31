@@ -1,0 +1,72 @@
+INFO:     Started server process [43]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8017 (Press CTRL+C to quit)
+Open http://127.0.0.1:8017 · starts paused
+INFO:     127.0.0.1:50412 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50418 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50418 - "GET /assets/index-Mdt9Nyjv.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "GET /assets/three-BTy3D838.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50422 - "GET /assets/react-SIwY82C9.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50450 - "GET /assets/index-BK1Tvn4t.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50456 - "WebSocket /api/live" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:50436 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/tasks HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50462 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50462 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/conflicts/demo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50462 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/failures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50462 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/recover HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40404 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/battery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50436 - "POST /api/config/swarms HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50412 - "GET /api/state HTTP/1.1" 200 OK
