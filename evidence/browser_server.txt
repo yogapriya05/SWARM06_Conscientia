@@ -1,0 +1,52 @@
+INFO:     Started server process [13]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8013 (Press CTRL+C to quit)
+Open http://127.0.0.1:8013 · starts paused
+INFO:     127.0.0.1:52998 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53014 - "GET /assets/index-u4kajSu3.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53000 - "GET /assets/index-_MpDdjWZ.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "GET /assets/three-UOR6CXtU.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53026 - "GET /assets/react-SIwY82C9.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53042 - "WebSocket /api/live" [accepted]
+INFO:     connection open
+INFO:     127.0.0.1:53034 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/tasks HTTP/1.1" 201 Created
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42018 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/failures HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42018 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/settings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42018 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42018 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/recover HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/control HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/weights.csv HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/battery HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/config/swarms HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/config/swarms HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52998 - "GET /api/state HTTP/1.1" 200 OK

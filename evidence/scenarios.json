@@ -1,0 +1,928 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux",
+  "versions": {
+    "numpy": "2.3.5",
+    "fastapi": "0.162.0",
+    "pydantic": "2.14.1",
+    "uvicorn": "0.54.0",
+    "pytest": "9.2.0",
+    "httpx": "0.28.1",
+    "scipy": "1.17.0"
+  },
+  "seed": 7,
+  "cases": [
+    {
+      "name": "nominal_6",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 80,
+      "simulated_s": 160.0,
+      "wall_s": 0.09743692600022769,
+      "accounting_checks": 80,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 32.0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 4,
+        "missed": 0,
+        "total_tasks": 4,
+        "completion_pct": 100.0,
+        "delivered_utility": 18,
+        "mean_delivery_s": 26.0,
+        "paired_campaigns": 2,
+        "healthy_nodes": 6,
+        "relay_nodes": 6,
+        "mean_battery_pct": 71.40390565500647,
+        "max_temperature_c": 32.826831429331136,
+        "recovery_mean_s": null,
+        "reassignments": 0,
+        "reroutes": 0,
+        "faults_detected": 0,
+        "recovered_nodes": 0,
+        "dropped_mb": 0.0,
+        "delivered_mb": 36.0,
+        "task_recovery_count": 0,
+        "energy_used_wh": 4.239555555555534
+      },
+      "planner_calls": 1,
+      "plans": [
+        {
+          "runtime_ms": 19.877696999174077,
+          "rounds": 22,
+          "converged": true,
+          "primal": 2.144645866614252e-15,
+          "dual": 0.0046215871698801455
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "dynamic_faults_6",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 300,
+      "simulated_s": 600.0,
+      "wall_s": 0.6876561419994687,
+      "accounting_checks": 300,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 46,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 42,
+        "missed": 0,
+        "total_tasks": 42,
+        "completion_pct": 100.0,
+        "delivered_utility": 252,
+        "mean_delivery_s": 26.38095238095238,
+        "paired_campaigns": 21,
+        "healthy_nodes": 6,
+        "relay_nodes": 6,
+        "mean_battery_pct": 72.63599824759906,
+        "max_temperature_c": 32.83652469359481,
+        "recovery_mean_s": 7.5,
+        "reassignments": 2,
+        "reroutes": 2,
+        "faults_detected": 3,
+        "recovered_nodes": 3,
+        "dropped_mb": 0.0,
+        "delivered_mb": 378.0,
+        "task_recovery_count": 4,
+        "energy_used_wh": 18.628000000000707
+      },
+      "planner_calls": 21,
+      "plans": [
+        {
+          "runtime_ms": 19.582042001275113,
+          "rounds": 22,
+          "converged": true,
+          "primal": 2.144645866614252e-15,
+          "dual": 0.0046215871698801455
+        },
+        {
+          "runtime_ms": 16.354257999410038,
+          "rounds": 22,
+          "converged": true,
+          "primal": 1.0131973196801333e-15,
+          "dual": 0.00455163199411876
+        },
+        {
+          "runtime_ms": 13.598196001112228,
+          "rounds": 20,
+          "converged": true,
+          "primal": 2.295001789086495e-15,
+          "dual": 0.004776223678614914
+        },
+        {
+          "runtime_ms": 16.559894000238273,
+          "rounds": 25,
+          "converged": true,
+          "primal": 6.162737906427329e-16,
+          "dual": 0.0044413454983672305
+        },
+        {
+          "runtime_ms": 14.458792998993886,
+          "rounds": 19,
+          "converged": true,
+          "primal": 1.0472949598743674e-14,
+          "dual": 0.004998137785251767
+        },
+        {
+          "runtime_ms": 14.645294999354519,
+          "rounds": 19,
+          "converged": true,
+          "primal": 2.548567977795757e-15,
+          "dual": 0.004906470383095036
+        },
+        {
+          "runtime_ms": 13.960872998723062,
+          "rounds": 17,
+          "converged": true,
+          "primal": 4.794979564236055e-13,
+          "dual": 0.004747517705979537
+        },
+        {
+          "runtime_ms": 15.539911999439937,
+          "rounds": 20,
+          "converged": true,
+          "primal": 1.1555289829526867e-15,
+          "dual": 0.004811553644295087
+        },
+        {
+          "runtime_ms": 11.998392001260072,
+          "rounds": 17,
+          "converged": true,
+          "primal": 1.9895830634546454e-12,
+          "dual": 0.004880663987807268
+        },
+        {
+          "runtime_ms": 8.807119000266539,
+          "rounds": 19,
+          "converged": true,
+          "primal": 7.464392359135654e-16,
+          "dual": 0.004773835693474841
+        },
+        {
+          "runtime_ms": 7.813521999196382,
+          "rounds": 17,
+          "converged": true,
+          "primal": 9.994182039063987e-14,
+          "dual": 0.0047071680715248835
+        },
+        {
+          "runtime_ms": 9.791021999262739,
+          "rounds": 20,
+          "converged": true,
+          "primal": 6.883158913749268e-16,
+          "dual": 0.00436003592261074
+        },
+        {
+          "runtime_ms": 11.881840999194537,
+          "rounds": 17,
+          "converged": true,
+          "primal": 9.929358851127927e-14,
+          "dual": 0.0049794976056121215
+        },
+        {
+          "runtime_ms": 14.84579499992833,
+          "rounds": 20,
+          "converged": true,
+          "primal": 1.0477500027681815e-15,
+          "dual": 0.004786328689250782
+        },
+        {
+          "runtime_ms": 8.235216999310069,
+          "rounds": 17,
+          "converged": true,
+          "primal": 2.169970721355964e-13,
+          "dual": 0.004771017575129427
+        },
+        {
+          "runtime_ms": 8.751364999625366,
+          "rounds": 20,
+          "converged": true,
+          "primal": 1.5818243213922008e-15,
+          "dual": 0.0046235954825191265
+        },
+        {
+          "runtime_ms": 16.087898000478162,
+          "rounds": 18,
+          "converged": true,
+          "primal": 7.072040193753354e-14,
+          "dual": 0.004507017952006012
+        },
+        {
+          "runtime_ms": 10.763346999738133,
+          "rounds": 21,
+          "converged": true,
+          "primal": 5.464131126067815e-16,
+          "dual": 0.004444316421358433
+        },
+        {
+          "runtime_ms": 7.873672999267001,
+          "rounds": 17,
+          "converged": true,
+          "primal": 5.463517651489268e-13,
+          "dual": 0.004883075905776324
+        },
+        {
+          "runtime_ms": 10.91017299950181,
+          "rounds": 18,
+          "converged": true,
+          "primal": 1.3841588960003755e-14,
+          "dual": 0.00436426503156797
+        },
+        {
+          "runtime_ms": 10.223892000794876,
+          "rounds": 17,
+          "converged": true,
+          "primal": 2.165186200385236e-13,
+          "dual": 0.004816248605746684
+        }
+      ],
+      "events": [
+        {
+          "time_s": 30.0,
+          "category": "fault",
+          "node": "S1",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 30.0,
+          "category": "repair",
+          "node": "S1",
+          "message": "Retry required after S1 lost compute capability"
+        },
+        {
+          "time_s": 30.0,
+          "category": "repair",
+          "node": "S1",
+          "message": "Retry required after S1 lost compute capability"
+        },
+        {
+          "time_s": 30.0,
+          "category": "route",
+          "node": "S2",
+          "message": "Repaired route: S2 -> S3 -> S4 -> GROUND"
+        },
+        {
+          "time_s": 50.0,
+          "category": "recovery",
+          "node": "S1",
+          "message": "Transient offline fault ended"
+        },
+        {
+          "time_s": 56.0,
+          "category": "recovery",
+          "node": "S1",
+          "message": "Node is healthy again"
+        },
+        {
+          "time_s": 56.0,
+          "category": "route",
+          "node": "S1",
+          "message": "Repaired route: S1 -> GROUND"
+        },
+        {
+          "time_s": 138.0,
+          "category": "fault",
+          "node": "S3",
+          "message": "thermal protection"
+        },
+        {
+          "time_s": 200.0,
+          "category": "recovery",
+          "node": "S3",
+          "message": "Operator recovery: faults cleared and resources restored"
+        },
+        {
+          "time_s": 206.0,
+          "category": "recovery",
+          "node": "S3",
+          "message": "Node is healthy again"
+        },
+        {
+          "time_s": 330.0,
+          "category": "fault",
+          "node": "S5",
+          "message": "sensor data stale"
+        },
+        {
+          "time_s": 332.0,
+          "category": "recovery",
+          "node": "S5",
+          "message": "Transient stale fault ended"
+        },
+        {
+          "time_s": 338.0,
+          "category": "recovery",
+          "node": "S5",
+          "message": "Node is healthy again"
+        }
+      ]
+    },
+    {
+      "name": "nominal_20",
+      "passed": true,
+      "nodes": 20,
+      "ticks": 80,
+      "simulated_s": 160.0,
+      "wall_s": 0.22477075400092872,
+      "accounting_checks": 80,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 28.0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 4,
+        "missed": 0,
+        "total_tasks": 4,
+        "completion_pct": 100.0,
+        "delivered_utility": 22,
+        "mean_delivery_s": 26.0,
+        "paired_campaigns": 2,
+        "healthy_nodes": 20,
+        "relay_nodes": 20,
+        "mean_battery_pct": 73.25312254710799,
+        "max_temperature_c": 32.820815540145766,
+        "recovery_mean_s": null,
+        "reassignments": 0,
+        "reroutes": 0,
+        "faults_detected": 0,
+        "recovered_nodes": 0,
+        "dropped_mb": 0.0,
+        "delivered_mb": 36.0,
+        "task_recovery_count": 0,
+        "energy_used_wh": 13.408444444444957
+      },
+      "planner_calls": 1,
+      "plans": [
+        {
+          "runtime_ms": 57.54406500091136,
+          "rounds": 25,
+          "converged": true,
+          "primal": 6.455896966685296e-05,
+          "dual": 0.004586621684658288
+        }
+      ],
+      "events": []
+    },
+    {
+      "name": "dynamic_faults_20",
+      "passed": true,
+      "nodes": 20,
+      "ticks": 300,
+      "simulated_s": 600.0,
+      "wall_s": 1.8514611760001571,
+      "accounting_checks": 300,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 32,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 42,
+        "missed": 0,
+        "total_tasks": 42,
+        "completion_pct": 100.0,
+        "delivered_utility": 250,
+        "mean_delivery_s": 24.714285714285715,
+        "paired_campaigns": 21,
+        "healthy_nodes": 20,
+        "relay_nodes": 20,
+        "mean_battery_pct": 74.68700865821913,
+        "max_temperature_c": 32.83966063978785,
+        "recovery_mean_s": 0.0,
+        "reassignments": 1,
+        "reroutes": 0,
+        "faults_detected": 3,
+        "recovered_nodes": 3,
+        "dropped_mb": 0.0,
+        "delivered_mb": 378.0,
+        "task_recovery_count": 1,
+        "energy_used_wh": 53.017722222217635
+      },
+      "planner_calls": 21,
+      "plans": [
+        {
+          "runtime_ms": 71.15196699851367,
+          "rounds": 25,
+          "converged": true,
+          "primal": 6.455896966685296e-05,
+          "dual": 0.004586621684658288
+        },
+        {
+          "runtime_ms": 44.80649399920367,
+          "rounds": 24,
+          "converged": true,
+          "primal": 8.046748259436512e-09,
+          "dual": 0.004647937665721479
+        },
+        {
+          "runtime_ms": 47.24079699917638,
+          "rounds": 21,
+          "converged": true,
+          "primal": 1.569308154062554e-05,
+          "dual": 0.004352812035600083
+        },
+        {
+          "runtime_ms": 43.25232300107018,
+          "rounds": 23,
+          "converged": true,
+          "primal": 1.6635516236124579e-09,
+          "dual": 0.0047848830870563025
+        },
+        {
+          "runtime_ms": 55.696454999633715,
+          "rounds": 19,
+          "converged": true,
+          "primal": 0.0005556722126607176,
+          "dual": 0.004366412835126193
+        },
+        {
+          "runtime_ms": 52.75292199985415,
+          "rounds": 23,
+          "converged": true,
+          "primal": 2.898365808159725e-13,
+          "dual": 0.004865208612746824
+        },
+        {
+          "runtime_ms": 44.60185000061756,
+          "rounds": 21,
+          "converged": true,
+          "primal": 9.547301070019817e-11,
+          "dual": 0.004894586256353419
+        },
+        {
+          "runtime_ms": 46.127879000778194,
+          "rounds": 23,
+          "converged": true,
+          "primal": 2.562908164530394e-10,
+          "dual": 0.004942062625405312
+        },
+        {
+          "runtime_ms": 53.05408999993233,
+          "rounds": 22,
+          "converged": true,
+          "primal": 3.340218219772536e-07,
+          "dual": 0.004955614745068385
+        },
+        {
+          "runtime_ms": 52.72678300025291,
+          "rounds": 22,
+          "converged": true,
+          "primal": 3.852855754368739e-11,
+          "dual": 0.004546035191276017
+        },
+        {
+          "runtime_ms": 58.38861200027168,
+          "rounds": 23,
+          "converged": true,
+          "primal": 1.5350257955004002e-09,
+          "dual": 0.0046571619531346
+        },
+        {
+          "runtime_ms": 58.54548899878864,
+          "rounds": 21,
+          "converged": true,
+          "primal": 1.931654818279107e-06,
+          "dual": 0.004553874079001523
+        },
+        {
+          "runtime_ms": 61.70123299853003,
+          "rounds": 22,
+          "converged": true,
+          "primal": 2.9686344583292744e-12,
+          "dual": 0.004862503871599914
+        },
+        {
+          "runtime_ms": 43.288820999805466,
+          "rounds": 23,
+          "converged": true,
+          "primal": 2.982582999713133e-06,
+          "dual": 0.00438599096448613
+        },
+        {
+          "runtime_ms": 40.76083200016001,
+          "rounds": 21,
+          "converged": true,
+          "primal": 1.410795005793388e-05,
+          "dual": 0.004988055213351402
+        },
+        {
+          "runtime_ms": 37.55034599998908,
+          "rounds": 22,
+          "converged": true,
+          "primal": 1.609364636788153e-06,
+          "dual": 0.004387361373525184
+        },
+        {
+          "runtime_ms": 59.87191700114636,
+          "rounds": 21,
+          "converged": true,
+          "primal": 5.858626138769021e-05,
+          "dual": 0.004703365252789936
+        },
+        {
+          "runtime_ms": 51.26089899931685,
+          "rounds": 22,
+          "converged": true,
+          "primal": 7.726301736371905e-09,
+          "dual": 0.004483928172468482
+        },
+        {
+          "runtime_ms": 56.597012999191065,
+          "rounds": 22,
+          "converged": true,
+          "primal": 3.000744536707506e-11,
+          "dual": 0.004885643417154698
+        },
+        {
+          "runtime_ms": 36.7064339989156,
+          "rounds": 22,
+          "converged": true,
+          "primal": 0.00019743437664383902,
+          "dual": 0.004531358641443878
+        },
+        {
+          "runtime_ms": 46.73550000006799,
+          "rounds": 23,
+          "converged": true,
+          "primal": 7.098151106196523e-09,
+          "dual": 0.004463192562569323
+        }
+      ],
+      "events": [
+        {
+          "time_s": 30.0,
+          "category": "fault",
+          "node": "S19",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 30.0,
+          "category": "repair",
+          "node": "S19",
+          "message": "Retry required after S19 lost compute capability"
+        },
+        {
+          "time_s": 50.0,
+          "category": "recovery",
+          "node": "S19",
+          "message": "Transient offline fault ended"
+        },
+        {
+          "time_s": 56.0,
+          "category": "recovery",
+          "node": "S19",
+          "message": "Node is healthy again"
+        },
+        {
+          "time_s": 140.0,
+          "category": "fault",
+          "node": "S3",
+          "message": "thermal protection"
+        },
+        {
+          "time_s": 200.0,
+          "category": "recovery",
+          "node": "S3",
+          "message": "Operator recovery: faults cleared and resources restored"
+        },
+        {
+          "time_s": 206.0,
+          "category": "recovery",
+          "node": "S3",
+          "message": "Node is healthy again"
+        },
+        {
+          "time_s": 330.0,
+          "category": "fault",
+          "node": "S5",
+          "message": "sensor data stale"
+        },
+        {
+          "time_s": 332.0,
+          "category": "recovery",
+          "node": "S5",
+          "message": "Transient stale fault ended"
+        },
+        {
+          "time_s": 338.0,
+          "category": "recovery",
+          "node": "S5",
+          "message": "Node is healthy again"
+        }
+      ]
+    },
+    {
+      "name": "relay_link_loss",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 70,
+      "simulated_s": 140.0,
+      "wall_s": 0.04841329400005634,
+      "accounting_checks": 70,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 20.0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 1,
+        "missed": 0,
+        "total_tasks": 1,
+        "completion_pct": 100.0,
+        "delivered_utility": 5,
+        "mean_delivery_s": 22.0,
+        "paired_campaigns": 0,
+        "healthy_nodes": 6,
+        "relay_nodes": 6,
+        "mean_battery_pct": 71.41311861796942,
+        "max_temperature_c": 32.78379454632971,
+        "recovery_mean_s": 2.0,
+        "reassignments": 0,
+        "reroutes": 1,
+        "faults_detected": 0,
+        "recovered_nodes": 0,
+        "dropped_mb": 0.0,
+        "delivered_mb": 20.0,
+        "task_recovery_count": 1,
+        "energy_used_wh": 3.517277777777759
+      },
+      "planner_calls": 1,
+      "plans": [
+        {
+          "runtime_ms": 2.019351999479113,
+          "rounds": 2,
+          "converged": true,
+          "primal": 0.0,
+          "dual": 0.0
+        }
+      ],
+      "events": [
+        {
+          "time_s": 4.0,
+          "category": "route",
+          "node": "S2",
+          "message": "Repaired route: S2 -> S1 -> GROUND"
+        }
+      ]
+    },
+    {
+      "name": "failed_holder_recovery",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 70,
+      "simulated_s": 140.0,
+      "wall_s": 0.03306095100015227,
+      "accounting_checks": 70,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 4.0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 1,
+        "missed": 0,
+        "total_tasks": 1,
+        "completion_pct": 100.0,
+        "delivered_utility": 5,
+        "mean_delivery_s": 30.0,
+        "paired_campaigns": 0,
+        "healthy_nodes": 6,
+        "relay_nodes": 6,
+        "mean_battery_pct": 71.42724824759904,
+        "max_temperature_c": 32.77503553355601,
+        "recovery_mean_s": null,
+        "reassignments": 0,
+        "reroutes": 0,
+        "faults_detected": 1,
+        "recovered_nodes": 1,
+        "dropped_mb": 0.0,
+        "delivered_mb": 4.0,
+        "task_recovery_count": 0,
+        "energy_used_wh": 3.4324999999999823
+      },
+      "planner_calls": 1,
+      "plans": [
+        {
+          "runtime_ms": 1.3331990012375172,
+          "rounds": 2,
+          "converged": true,
+          "primal": 0.0,
+          "dual": 0.0
+        }
+      ],
+      "events": [
+        {
+          "time_s": 2.0,
+          "category": "fault",
+          "node": "S2",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 20.0,
+          "category": "recovery",
+          "node": "S2",
+          "message": "Operator recovery: faults cleared and resources restored"
+        },
+        {
+          "time_s": 26.0,
+          "category": "recovery",
+          "node": "S2",
+          "message": "Node is healthy again"
+        }
+      ]
+    },
+    {
+      "name": "cpu_to_thermal_failure",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 25,
+      "simulated_s": 50.0,
+      "wall_s": 0.0105913879997388,
+      "accounting_checks": 25,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 0,
+        "missed": 0,
+        "total_tasks": 0,
+        "completion_pct": 0.0,
+        "delivered_utility": 0,
+        "mean_delivery_s": 0.0,
+        "paired_campaigns": 0,
+        "healthy_nodes": 5,
+        "relay_nodes": 5,
+        "mean_battery_pct": 71.19226213648793,
+        "max_temperature_c": 133.40588865271098,
+        "recovery_mean_s": null,
+        "reassignments": 0,
+        "reroutes": 0,
+        "faults_detected": 1,
+        "recovered_nodes": 0,
+        "dropped_mb": 0.0,
+        "delivered_mb": 0.0,
+        "task_recovery_count": 0,
+        "energy_used_wh": 1.7604166666666619
+      },
+      "planner_calls": 0,
+      "plans": [],
+      "events": [
+        {
+          "time_s": 22.0,
+          "category": "fault",
+          "node": "S2",
+          "message": "thermal protection"
+        }
+      ]
+    },
+    {
+      "name": "residual_cusum",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 5,
+      "simulated_s": 10.0,
+      "wall_s": 0.001930398000695277,
+      "accounting_checks": 5,
+      "min_battery_wh": 67.53974477374334,
+      "max_storage_with_reservations_mb": 0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 0,
+        "missed": 0,
+        "total_tasks": 0,
+        "completion_pct": 0.0,
+        "delivered_utility": 0,
+        "mean_delivery_s": 0.0,
+        "paired_campaigns": 0,
+        "healthy_nodes": 5,
+        "relay_nodes": 5,
+        "mean_battery_pct": 70.98469269204348,
+        "max_temperature_c": 37.3773488324812,
+        "recovery_mean_s": null,
+        "reassignments": 0,
+        "reroutes": 0,
+        "faults_detected": 1,
+        "recovered_nodes": 0,
+        "dropped_mb": 0.0,
+        "delivered_mb": 0.0,
+        "task_recovery_count": 0,
+        "energy_used_wh": 0.24583333333333343
+      },
+      "planner_calls": 0,
+      "plans": [],
+      "events": [
+        {
+          "time_s": 4.0,
+          "category": "fault",
+          "node": "S2",
+          "message": "CUSUM: unexpected heating"
+        }
+      ]
+    },
+    {
+      "name": "no_feasible_hosts",
+      "passed": true,
+      "nodes": 6,
+      "ticks": 10,
+      "simulated_s": 20.0,
+      "wall_s": 0.006309807000434375,
+      "accounting_checks": 10,
+      "min_battery_wh": 67.54274477374334,
+      "max_storage_with_reservations_mb": 0,
+      "metrics": {
+        "queued": 0,
+        "running": 0,
+        "downlink": 0,
+        "completed": 0,
+        "missed": 1,
+        "total_tasks": 1,
+        "completion_pct": 0.0,
+        "delivered_utility": 0,
+        "mean_delivery_s": 0.0,
+        "paired_campaigns": 0,
+        "healthy_nodes": 0,
+        "relay_nodes": 0,
+        "mean_battery_pct": 71.08872046982125,
+        "max_temperature_c": 27.504046231129088,
+        "recovery_mean_s": null,
+        "reassignments": 0,
+        "reroutes": 0,
+        "faults_detected": 6,
+        "recovered_nodes": 0,
+        "dropped_mb": 0.0,
+        "delivered_mb": 0.0,
+        "task_recovery_count": 0,
+        "energy_used_wh": 0.3116666666666667
+      },
+      "planner_calls": 2,
+      "plans": [
+        {
+          "runtime_ms": 0.6082059990148991,
+          "rounds": 1,
+          "converged": true,
+          "primal": 0.0,
+          "dual": 0.0
+        },
+        {
+          "runtime_ms": 0.9394859989697579,
+          "rounds": 1,
+          "converged": true,
+          "primal": 0.0,
+          "dual": 0.0
+        }
+      ],
+      "events": [
+        {
+          "time_s": 0.0,
+          "category": "fault",
+          "node": "S1",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 0.0,
+          "category": "fault",
+          "node": "S2",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 0.0,
+          "category": "fault",
+          "node": "S3",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 0.0,
+          "category": "fault",
+          "node": "S4",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 0.0,
+          "category": "fault",
+          "node": "S5",
+          "message": "manual node shutdown"
+        },
+        {
+          "time_s": 0.0,
+          "category": "fault",
+          "node": "S6",
+          "message": "manual node shutdown"
+        }
+      ]
+    }
+  ],
+  "all_passed": true
+}

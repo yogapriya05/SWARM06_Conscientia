@@ -1,0 +1,1 @@
+PASS fresh extraction: 4 frontend assets served without node_modules; immediate CPU-fault reallocation; CLI run with 1 swarm / 20 nodes; archive imports resolve locally.
