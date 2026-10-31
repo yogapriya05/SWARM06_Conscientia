@@ -423,3 +423,5 @@ and advanced controls. `python3 run_legacy_scenarios.py` runs its scenario suite
 The exact source input archives remain in `references`. Earlier integrated
 model notes are retained in `docs/INTEGRATED_V1_README.md`; this README governs
 the corrected primary application's current behaviour.
+
+<mark>Note</mark>: The white paper for the work with a detailed explanation on the work can be found [here](Hackathon_documentation.pdf)
