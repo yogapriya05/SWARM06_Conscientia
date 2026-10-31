@@ -12,19 +12,19 @@ Python 3.10+ and a WebGL-capable browser are required. The built React/Three.js
 frontend is included; Node.js is needed only when modifying frontend source.
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 # Windows: .venv\Scripts\activate
 # Linux/macOS: source .venv/bin/activate
-python -m pip install -r requirements.txt
-python run.py
+python3 -m pip install -r requirements.txt
+python3 run.py
 ```
 
 Open **http://127.0.0.1:8000**. `start.bat` and `start.sh` are convenience
 launchers after dependencies are installed in your active environment.
 
 ```bash
-python run.py --swarms 2 --satellites 20 --seed 7 --space-effects
-python run.py --quiet-http
+python3 run.py --swarms 2 --satellites 20 --seed 7 --space-effects
+python3 run.py --quiet-http
 ```
 
 There can be exactly one or two swarms, with 1–20 satellites in each. Both swarms
@@ -340,7 +340,7 @@ still valid. **304 is not an application error.** Hashed asset names change when
 the bundle changes, so the new build gets new URLs automatically. The HTML entry
 point is served with `Cache-Control: no-cache` so it can discover those new URLs.
 A hard refresh can help if an older page remains open across replacing files.
-Use `python run.py --quiet-http` if you prefer to hide routine access logs.
+Use `python3 run.py --quiet-http` if you prefer to hide routine access logs.
 
 ## API and exports
 
@@ -379,8 +379,8 @@ export and two-way CSV weights are retained.
 ## Build and test
 
 ```bash
-python -m pip install -r requirements-dev.txt
-python -m pytest -q tests backend/lab_tests
+python3 -m pip install -r requirements-dev.txt
+python3 -m pytest -q tests backend/lab_tests
 python run.py --headless --seconds 600 --space-effects --export snapshot.json
 ```
 
@@ -417,9 +417,9 @@ New or substantially revised files:
 - `frontend/src/components/MeshView.tsx`: continuous dual 3D scene and graph history.
 
 The original ADMM, bounded PSO, CUSUM and lumped thermal primitives remain in
-`backend/lab_core` and are reused. `python run_legacy_lab.py --nodes 20 --port 8001`
+`backend/lab_core` and are reused. `python3 run_legacy_lab.py --nodes 20 --port 8001`
 opens the retained original laboratory, with its original separate experiment
-and advanced controls. `python run_legacy_scenarios.py` runs its scenario suite.
+and advanced controls. `python3 run_legacy_scenarios.py` runs its scenario suite.
 The exact source input archives remain in `references`. Earlier integrated
 model notes are retained in `docs/INTEGRATED_V1_README.md`; this README governs
 the corrected primary application's current behaviour.
