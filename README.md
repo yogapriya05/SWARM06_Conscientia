@@ -19,6 +19,11 @@ python3 -m pip install -r requirements.txt
 python3 run.py
 ```
 
+Or equivalently run:
+```bash
+./runRun.sh
+```
+
 Open **http://127.0.0.1:8000**. `start.bat` and `start.sh` are convenience
 launchers after dependencies are installed in your active environment.
 
